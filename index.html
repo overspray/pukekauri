@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pukekauri></title>
+  <link rel="stylesheet" href="mystyles.css"></link>
+  <script src="myslides.js"></script>
+</head>
+<body>
+  <div class="menu_bar">
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="pukekauri.html">Farm</a>
+      </li>
+      <li>
+        <a href="environmental.html">Environment</a>
+      </li>
+      <li>
+        <a href="aboutus.html">About</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="mySlides">
+      
+        <img src="images/photo1wide.jpg" style="width:100%">
+        <div class="logo"><img src="images/pukelogo2.png">
+        </div>
+      </div>
+    <div class="mySlides">
+      <div class="numbertext"><a class="mylink" href="environmental.html">Rice Paddies</a></div>
+      <img src="images/photo2wide.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext"><a class="mylink" href="environmental.html">Events</div>
+      <img src="images/photo3wide.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext"><a class="mylink" href="aboutus.html">Beef and Lamb</a></div>
+      <img src="images/photo4wide.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext"><a class="mylink" href="environmental.html">Environment</a></div>
+      <img src="images/photo5wide.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext"><a class="mylink" href="aboutus.html">About Us</a></div>
+      <img src="images/photo6wide.jpg" style="width:100%">
+    </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <div class= "caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/photo1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Graveyard">
+      <a href="enviromental.html">Home</a>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/photo2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Towards the Hall">
+      <a href="enviromental.html">Farm</a>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/photo3.jpg" style="width:100%" onclick="currentSlide(3)" alt="the cats">
+      <a href="enviromental.html">Farm</a>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/photo4.jpg" style="width:100%" onclick="currentSlide(4)" alt="the cats">
+      <a href="enviromental.html">Environment</a>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/photo5.jpg" style="width:100%" onclick="currentSlide(5)" alt="the cats">
+      <a href="enviromental.html">Environment</a>
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/photo6.jpg" style="width:100%" onclick="currentSlide(6)" alt="The Bridge">
+      <a href="enviromental.html">About</a>
+    </div>
+  </div>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) { slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace("active", " ");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += "active";
+  captionText.innerHTML = dots[slideIndex - 1].alt;
+}
+</script>
+
+</body>
+
+</html>
